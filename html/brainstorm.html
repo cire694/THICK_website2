@@ -1,0 +1,82 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College Essays Brainstorming</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Brainstorm Prompts</h1>
+        <h2><b><i>Remember to save your responses!</i></b></h2>
+        
+    <div class="textbox-container">
+        <p>Write a story that reflects you socioeconomically (poverty, immigration). <br>(<i>5 minutes</i>)</p>
+        <textarea class="textbox" id="prompt0" placeholder="Write your response here"></textarea>
+    </div>
+
+    <div class="textbox-container">
+        <p>Write about a memory growing up. <br>(<i>5 minutes</i>)</p>
+        <textarea class="textbox" id="prompt1" placeholder="Write your response here"></textarea>
+    </div>
+
+    <div class="textbox-container">
+        <p>List and tell a story about each family member / Write about your family dynamic.</p>
+        <textarea class="textbox" id="prompt2" placeholder="Write your response here"></textarea>
+    </div>
+
+    <div class="textbox-container">
+        <p>Write about an event that happened in elementary school that shaped you. <br>(<i>5 minutes</i>)</p>
+        <textarea class="textbox" id="prompt3" placeholder="Write your response here"></textarea>
+    </div>
+
+    <div class="textbox-container">
+        <p>Write about an event that happened in middle school that shaped you. <br>(<i>5 minutes</i>)</p>
+        <textarea class="textbox" id="prompt4" placeholder="Write your response here"></textarea>
+    </div>
+
+    <div class="textbox-container">
+        <p>Write about an event that happened in high school that shaped you. <br>(<i>5 minutes</i>)</p>
+        <textarea class="textbox" id="prompt5" placeholder="Write your response here"></textarea>
+    </div>
+
+    <div class="textbox-container">
+        <p>Write about a person who changed your opinion about the world. <br>(<i>5 minutes</i>)</p>
+        <textarea class="textbox" id="prompt6" placeholder="Write your response here"></textarea>
+    </div>
+
+    <div class="textbox-container">
+        <p>Write about a hobby you enjoy</p>
+        <textarea class="textbox" id="prompt7" placeholder="Write your response here"></textarea>
+    </div>
+
+    <div class="textbox-container">
+        <p>What's your biggest regret?</p>
+        <textarea class="textbox" id="prompt8" placeholder="Write your response here"></textarea>
+    </div>
+        <button class="next-button" id = 'next'>Next</button>
+    </div>
+    <script>
+        document.getElementById('next').addEventListener('click', function() {
+            for (let i = 0; i <= 8; i++) {
+                const textarea = document.getElementById(`prompt${i}`);
+                localStorage.setItem(`response${i}`, textarea.value);
+            }
+            alert('Responses saved!');
+        });
+
+        // Load saved responses on page load
+        window.addEventListener('load', function() {
+            for (let i = 0; i <= 8; i++) {
+                const savedResponse = localStorage.getItem(`response${i}`);
+                if (savedResponse) {
+                    document.getElementById(`prompt${i}`).value = savedResponse;
+                }
+            }
+        });
+    </script>
+</body>
+</html>
