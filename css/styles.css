@@ -26,7 +26,7 @@ body{
     margin-bottom: 10px;
 }
 
-.next-button{
+.button{
     padding: 10px 20px;
     background-color: #007BFF;
     color: white;
@@ -34,6 +34,6 @@ body{
     border-radius: 4px;
     cursor: pointer;
 }
-.next-button:hover {
+.button:hover {
     background-color: #0056b3;
 }
