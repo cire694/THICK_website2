@@ -6,12 +6,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>College Essays Brainstorming</title>
     <link rel="stylesheet" href="../css/styles.css">
+    <style>
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+        .textbox-container {
+            margin-bottom: 15px;
+        }
+        .save-button {
+            margin-top: 20px;
+        }
+    </style>
 </head>
-
 <body>
+    
     <div class="container">
         <h1>Brainstorm Prompts</h1>
         <h2><b><i>Remember to save your responses!</i></b></h2>
+        <div id='explain'>
+            <p id = 'explain'>Here are some prompts below. The purpose of this exercise is to put things into writing, and into easier, more digestable steps
+            <br>
+            You should write nonstop for 5 minutes, even if it is gibberish
+            Before each prompt, take 30 seconds to think of possible responses and just write. 
+            </p>
+        </div>
         
         <div class="textbox-container">
             <p>Write a story that reflects you socioeconomically (poverty, immigration). <br>(<i>5 minutes</i>)</p>
@@ -57,8 +78,9 @@
             <p>What's your biggest regret?</p>
             <textarea class="textbox" id="prompt8" placeholder="Write your response here"></textarea>
         </div>
-        <button class="button" id = 'save'>Save for later</button>
-        <button class="button" id = 'next'>Next</button>
+        
+        <button class="button" id="save">Save For Later</button>
+        <button class="button" id="next">Next</button>
     </div>
     <script>
         document.getElementById('save').addEventListener('click', function() {
@@ -68,13 +90,14 @@
             }
             alert('Responses saved!');
         });
-        document.getElementById('next').addEventListener('click', function(){
+        
+        document.getElementById('next').addEventListener('click', function() {
             for (let i = 0; i <= 8; i++) {
                 const textarea = document.getElementById(`prompt${i}`);
                 localStorage.setItem(`response${i}`, textarea.value);
             }
-            window.location.href = "expand.html";
-        })
+            window.location.href = 'draft1.html'
+        });
 
         // Load saved responses on page load
         window.addEventListener('load', function() {

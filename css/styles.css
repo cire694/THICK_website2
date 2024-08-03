@@ -4,17 +4,20 @@ body{
     
     display: flex;
     justify-content: center;
-    /* align-items: center; */
 
+    
     height: 100vh;
     margin:0;
 }
+
+
 
 .textbox-container{
     background-color: white;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
     padding: 20px;
+    flex-direction: column;
 }
 
 .textbox{

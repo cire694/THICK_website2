@@ -9,33 +9,43 @@
 </head>
 <body>
     <div class="container">
-        <h1>Craft your draft</h1>
+        <h1>Craft your draft Part 2</h1>
 
         <h2><b><i>Remember to save your responses!</i></b></h2>
 
         <div class="textbox-container">
-            <p>Pick your favorite prompt(s) from the previous page. Expand on them. Tell 
+            <p>Now pick a different prompt from the previous page. Expand on them. Tell 
             a story with a beginning, middle, and ending.</p>
-    
+
+            <p><b>Warning:</b> Do <i><b>NOT</b></i> actively try to create a story that shows growth, personality, etc. Those things will come naturally, 
+                and forcing it will not turn out good.</p>
             <textarea class="textbox" id="essay1" placeholder="Write your response here"></textarea>
         </div>
 
         <button class="button" id="save">Save For Later</button>
+        <button class="button" id="back">Back</button>
         <button class="button" id="next">Next</button>
+
     </div>
 
     <script>
         
         document.getElementById('save').addEventListener('click', function() {
             const textarea = document.getElementById('essay1');
-            localStorage.setItem('response_essay2', textarea.value);
+            localStorage.setItem('response_essay1', textarea.value);
             alert('Responses saved!');
         });
         
         document.getElementById('next').addEventListener('click', function() {
             const textarea = document.getElementById('essay1');
-            localStorage.setItem('response_essay2', textarea.value);
-            
+            localStorage.setItem('response_essay1', textarea.value);
+            window.location.href = 'brainstormtips.html'
+        });
+
+        document.getElementById('back').addEventListener('click', function() {
+            const textarea = document.getElementById('essay1');
+            localStorage.setItem('response_essay1', textarea.value);
+            window.location.href = 'draft1.html'
         });
 
         // Load saved responses on page load
