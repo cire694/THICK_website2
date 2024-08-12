@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>College Essays Brainstorming</title>
     <link rel="stylesheet" href="../css/styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
     
 </head>
 <body>
@@ -19,40 +21,43 @@
 
             <p><b>Warning:</b> Do <i><b>NOT</b></i> actively try to create a story that shows growth, personality, etc. Those things will come naturally, 
                 and forcing it will not turn out good.</p>
-            <textarea class="textbox" id="essay1" placeholder="Write your response here"></textarea>
+            <textarea class="textbox" id="essay2" placeholder="Write your response here"></textarea>
         </div>
 
         <button class="button" id="save">Save For Later</button>
         <button class="button" id="back">Back</button>
         <button class="button" id="next">Next</button>
+        <button class="button" id="download-pdf">Download PDF</button>
 
     </div>
 
     <script>
         
         document.getElementById('save').addEventListener('click', function() {
-            const textarea = document.getElementById('essay1');
-            localStorage.setItem('response_essay1', textarea.value);
+            const textarea = document.getElementById('essay2');
+            localStorage.setItem('response_essay2', textarea.value);
             alert('Responses saved!');
         });
         
         document.getElementById('next').addEventListener('click', function() {
-            const textarea = document.getElementById('essay1');
-            localStorage.setItem('response_essay1', textarea.value);
+            const textarea = document.getElementById('essay2');
+            localStorage.setItem('response_essay2', textarea.value);
             window.location.href = 'brainstormtips.html'
         });
 
         document.getElementById('back').addEventListener('click', function() {
-            const textarea = document.getElementById('essay1');
-            localStorage.setItem('response_essay1', textarea.value);
+            const textarea = document.getElementById('essay2');
+            localStorage.setItem('response_essay2', textarea.value);
             window.location.href = 'draft1.html'
         });
 
+        
+
         // Load saved responses on page load
         window.addEventListener('load', function() {
-            const savedResponse = localStorage.getItem('response_essay1');
+            const savedResponse = localStorage.getItem('response_essay2');
             if (savedResponse) {
-                document.getElementById('essay1').value = savedResponse;
+                document.getElementById('essay2').value = savedResponse;
             }
         });
     </script>

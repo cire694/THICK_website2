@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>College Essays Brainstorming</title>
     <link rel="stylesheet" href="../css/styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
     <style>
         .container {
             display: flex;
@@ -81,6 +83,8 @@
         
         <button class="button" id="save">Save For Later</button>
         <button class="button" id="next">Next</button>
+        <button class="button" id="download-pdf">Download PDF</button>
+
     </div>
     <script>
         document.getElementById('save').addEventListener('click', function() {
@@ -98,6 +102,8 @@
             }
             window.location.href = 'draft1.html'
         });
+        
+
 
         // Load saved responses on page load
         window.addEventListener('load', function() {

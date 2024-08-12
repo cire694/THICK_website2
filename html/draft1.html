@@ -30,19 +30,19 @@
         
         document.getElementById('save').addEventListener('click', function() {
             const textarea = document.getElementById('essay1');
-            localStorage.setItem('response_essay2', textarea.value);
+            localStorage.setItem('response_essay1', textarea.value);
             alert('Responses saved!');
         });
         
         document.getElementById('next').addEventListener('click', function() {
             const textarea = document.getElementById('essay1');
-            localStorage.setItem('response_essay2', textarea.value);
+            localStorage.setItem('response_essay1', textarea.value);
             window.location.href = 'draft2.html'
         });
 
         document.getElementById('back').addEventListener('click', function() {
             const textarea = document.getElementById('essay1');
-            localStorage.setItem('response_essay2', textarea.value);
+            localStorage.setItem('response_essay1', textarea.value);
             window.location.href = 'brainstorm.html'
         });
 
